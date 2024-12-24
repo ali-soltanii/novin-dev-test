@@ -34,7 +34,8 @@ export const useNavigateBasedOnReferrer = () => {
   const location = useLocation()
 
   const navigateBasedOnReferrer = useCallback(() => {
-    if (location.state && location.state.fromApp) {
+    // eslint-disable-next-line no-restricted-globals
+    if ((location.state && location.state.fromApp) || history.length > 1) {
       navigate(-1)
     } else {
       navigate('/')

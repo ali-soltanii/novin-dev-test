@@ -101,6 +101,14 @@ function UserEdit () {
         >
           Save
         </Button>
+        <Button
+          type='button'
+          variant='outlined'
+          color='secondary'
+          onClick={goBack}
+        >
+          Back
+        </Button>
       </Form>
     )
   }

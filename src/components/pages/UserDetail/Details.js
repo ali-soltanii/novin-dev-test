@@ -14,6 +14,7 @@ import { useNavigate } from 'react-router-dom'
 
 import { ROUTES } from '../../../router/routes'
 import UserAvatar from '../../Avatar'
+import { useNavigateBasedOnReferrer } from '../../../api/hooks'
 
 const UserInfo = styled(Box)`
   display: flex;
@@ -36,6 +37,7 @@ const ButtonContainer = styled(Box)`
 function Details ({ user, onDeleteUser }) {
   const [isDialogOpen, setDialogOpen] = useState(false)
   const navigate = useNavigate()
+  const goBack = useNavigateBasedOnReferrer()
 
   const handleEdit = useCallback(() => {
     navigate(`${ROUTES.EDIT_USER}/${user.id}`)
@@ -65,6 +67,9 @@ function Details ({ user, onDeleteUser }) {
           <strong>Email:</strong> {user.email}
         </Typography>
         <ButtonContainer>
+          <Button variant='outlined' color='secondary' onClick={goBack}>
+            Back
+          </Button>
           <Button variant='contained' color='primary' onClick={handleEdit}>
             Edit
           </Button>
