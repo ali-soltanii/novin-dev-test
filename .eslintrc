@@ -1,0 +1,19 @@
+{
+  "extends": ["react-app", "standard"],
+  "plugins": ["import", "node", "promise"],
+  "rules": {
+    "indent": ["warn", 2],
+    "no-trailing-spaces": "warn",
+    "space-before-function-paren": ["warn", "always"],
+    "comma-spacing": ["warn", { "before": false, "after": true }],
+    "key-spacing": ["warn", { "beforeColon": false, "afterColon": true }],
+    "space-in-parens": ["warn", "never"],
+    "object-curly-spacing": ["warn", "always"],
+    "array-bracket-spacing": ["warn", "never"],
+    "block-spacing": ["warn", "always"],
+    "semi": ["warn", "never"],
+    "no-unused-vars": ["warn"],
+    "react/jsx-no-undef": ["warn"],
+    "multiline-ternary": "off"
+  }
+}
